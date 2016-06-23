@@ -64,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
                 new RecyclerItemClickListener(getApplicationContext(), new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
 
-                        Toast.makeText(MainActivity.this, "You click "+position, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Flower "+(position+1)+" Selected", Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(MainActivity.this,Item_Selected.class);
                         intent.putExtra("position",position);
