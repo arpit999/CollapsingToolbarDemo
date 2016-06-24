@@ -33,9 +33,9 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder holder, int position) {
 
         holder.Grocery = getItem(position);
-        holder.storeName.setText("Grocery Mart - "+list.get(position).Store);
-        holder.deliveryTime.setText("Deliver in "+list.get(position).deliveryTime);
-        holder.product.setText("Product : "+list.get(position).product);
+        holder.storeName.setText("Grocery Mart - " + list.get(position).Store);
+        holder.deliveryTime.setText("Deliver in " + list.get(position).deliveryTime);
+        holder.product.setText("Product : " + list.get(position).product);
     }
 
     @Override

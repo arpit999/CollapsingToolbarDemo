@@ -6,14 +6,13 @@
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:layout_margin="5dp"
+    android:transitionName="@string/CardView"
     card_view:cardCornerRadius="2dp"
     card_view:cardPreventCornerOverlap="false"
-    android:transitionName="@string/CardView"
     card_view:contentPadding="10dp">
 
     <LinearLayout
         android:id="@+id/lin_animation"
-        android:transitionName="@string/transition_grocery_store"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -22,14 +21,14 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_weight="5">
+            android:layout_weight="5"
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/store_name"
-                android:layout_weight="4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_weight="4"
                 android:padding="2dp"
                 android:text="Grocery Mart - Gandhingar"
                 android:textSize="15sp"
@@ -39,19 +38,17 @@
                 android:id="@+id/rate_image"
                 android:layout_width="13dp"
                 android:layout_height="13dp"
-                android:layout_marginRight="5dp"
                 android:layout_gravity="center_vertical"
+                android:layout_marginRight="5dp"
                 android:background="@drawable/star_img"
-                android:transitionName="@string/transition_rate_image"
-                android:padding="2dp"/>
+                android:padding="2dp" />
 
             <TextView
                 android:id="@+id/rate_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="5dp"
-                android:transitionName="@string/transition_rate_text"
-                android:text="4.2"/>
+                android:text="4.2" />
 
         </LinearLayout>
 
@@ -67,18 +64,16 @@
                 android:layout_height="13dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="4dp"
-                android:transitionName="@string/transition_delivery_image"
                 android:background="@drawable/delivery_img"
-                android:padding="2dp"/>
+                android:padding="2dp" />
 
             <TextView
                 android:id="@+id/delivery_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:transitionName="@string/transition_delivery_text"
-                android:text="Delivery in 2 hrs 30 min"
                 android:layout_marginLeft="5dp"
-                android:padding="2dp"/>
+                android:padding="2dp"
+                android:text="Delivery in 2 hrs 30 min" />
 
 
         </LinearLayout>
@@ -86,9 +81,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal"
-            android:layout_marginBottom="10dp">
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/product_image"
@@ -96,31 +91,29 @@
                 android:layout_height="13dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="4dp"
-                android:transitionName="@string/transition_product_image"
                 android:background="@drawable/products_img"
-                android:padding="2dp"/>
+                android:padding="2dp" />
 
             <TextView
                 android:id="@+id/product_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:transitionName="@string/transition_product_text"
-                android:text="1350 products to choose from"
                 android:layout_marginLeft="5dp"
-                android:padding="2dp"/>
+                android:padding="2dp"
+                android:text="1350 products to choose from" />
 
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@android:color/darker_gray"/>
+            android:background="@android:color/darker_gray" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
             <ImageView
                 android:id="@+id/offer_image"
@@ -128,18 +121,16 @@
                 android:layout_height="13dp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="4dp"
-                android:transitionName="@string/transition_offer_image"
                 android:background="@drawable/pickup_img"
-                android:padding="2dp"/>
+                android:padding="2dp" />
 
             <TextView
                 android:id="@+id/offer_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Free deliveryTime above ₹250"
                 android:layout_marginLeft="5dp"
-                android:transitionName="@string/transition_offer_text"
-                android:padding="2dp"/>
+                android:padding="2dp"
+                android:text="Free deliveryTime above ₹250" />
 
         </LinearLayout>
 
