@@ -18,12 +18,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     private Context mContext;
     List<Flower> list = new ArrayList<>();
 
-
     public CardAdapter(Context mContext, List<Flower> list) {
         this.mContext = mContext;
         this.list = list;
     }
-
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -68,7 +66,6 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
             cardtitle = (TextView) itemView.findViewById(R.id.cardtitle);
         }
     }
-
 
 }
 
