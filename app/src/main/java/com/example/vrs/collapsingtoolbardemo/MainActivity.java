@@ -1,9 +1,6 @@
 package com.example.vrs.collapsingtoolbardemo;
 
-import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,12 +12,9 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.GestureDetector;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -35,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
 
     CardAdapter adapter;
-    static List<Flower> flowers;
+    static List<Grocery> groceries;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,18 +50,19 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(llm);
         recyclerView.setHasFixedSize(true);
         initializeData();
-        adapter = new CardAdapter(getApplicationContext(), flowers);
+        adapter = new CardAdapter(getApplicationContext(), groceries);
         recyclerView.setAdapter(adapter);
 
         // RecyclerView Click listener
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(getApplicationContext(), new RecyclerItemClickListener.OnItemClickListener() {
-                    @Override public void onItemClick(View view, int position) {
+                    @Override
+                    public void onItemClick(View view, int position) {
 
-                        Toast.makeText(MainActivity.this, "Flower "+(position+1)+" Selected", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Grocery " + (position + 1) + " Selected", Toast.LENGTH_SHORT).show();
 
-                        Intent intent = new Intent(MainActivity.this,Item_Selected.class);
-                        intent.putExtra("position",position);
+                        Intent intent = new Intent(MainActivity.this, Item_Selected.class);
+                        intent.putExtra("position", position);
 
                         ActivityOptionsCompat options = ActivityOptionsCompat.makeSceneTransitionAnimation(
                                 // the context of the activity
@@ -76,15 +71,13 @@ public class MainActivity extends AppCompatActivity {
                                 // For each shared element, add to this method a new Pair item,
                                 // which contains the reference of the view we are transitioning *from*,
                                 // and the value of the transitionName attribute
-                                new Pair<View, String>(view.findViewById(R.id.cardimage),
-                                        getString(R.string.transition_name_circle)),
-                                new Pair<View, String>(view.findViewById(R.id.cardtitle),
-                                        getString(R.string.transition_name_name))
+
+                                new Pair<View, String>(view.findViewById(R.id.card_view),
+                                        getString(R.string.CardView))
 
                         );
                         ActivityCompat.startActivity(MainActivity.this, intent, options.toBundle());
 
-//                        startActivity(intent);
 
                     }
                 })
@@ -100,19 +93,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initializeData() {
-        flowers = new ArrayList<>();
-        flowers.add(new Flower("Flower 1", R.drawable.image2));
-        flowers.add(new Flower("Flower 2", R.drawable.images3));
-        flowers.add(new Flower("Flower 3", R.drawable.images4));
-        flowers.add(new Flower("Flower 4", R.drawable.images6));
-        flowers.add(new Flower("Flower 5", R.drawable.images7));
-        flowers.add(new Flower("Flower 6", R.drawable.images10));
-        flowers.add(new Flower("Flower 7", R.drawable.images11));
-        flowers.add(new Flower("Flower 8", R.drawable.images12));
-        flowers.add(new Flower("Flower 9", R.drawable.images14));
-        flowers.add(new Flower("Flower 10", R.drawable.images17));
-        flowers.add(new Flower("Flower 11", R.drawable.images18));
-        flowers.add(new Flower("Flower 12", R.drawable.index));
+        groceries = new ArrayList<>();
+        groceries.add(new Grocery("Gandhingar", "2 hrs 30 mins", "Mobile"));
+        groceries.add(new Grocery("Ahmedbad", "3 hrs 15 mins", "Basketball"));
+        groceries.add(new Grocery("Surat", "1 hrs 20 mins", "Biscuits"));
+        groceries.add(new Grocery("Rajkot", "3 hrs 10 mins", "Drinks"));
+        groceries.add(new Grocery("Bhavnagar", "1 hrs 20 mins", "Packaged Food"));
+        groceries.add(new Grocery("Mumbai", "2 hrs 30 mins", "House Hold"));
+        groceries.add(new Grocery("Puna", "2 hrs 40 mins", "Dry Fruits"));
+        groceries.add(new Grocery("Delhi", "4 hrs 10 mins", "Salt & Sugar"));
+        groceries.add(new Grocery("Bihar", "3 hrs 14 mins", "Energy Drink"));
+        groceries.add(new Grocery("Kalol", "2 hrs 30 mins", "Fruits"));
+        groceries.add(new Grocery("Somnath", "3 hrs 50 mins", "Mineral Water"));
+        groceries.add(new Grocery("Abu", "4 hrs 20 mins", "Tea & Coffee"));
 
     }
 

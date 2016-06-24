@@ -1,10 +1,11 @@
 package com.example.vrs.collapsingtoolbardemo;
 
-public class Flower {
+public class Grocery {
 
     String name;
     int id;
-    String delivery;
+
+    String deliveryTime;
     String product;
     String Store;
 
@@ -17,12 +18,12 @@ public class Flower {
         Store = store;
     }
 
-    public String getDelivery() {
-        return delivery;
+    public String getDeliveryTime() {
+        return deliveryTime;
     }
 
-    public void setDelivery(String delivery) {
-        this.delivery = delivery;
+    public void setDeliveryTime(String deliveryTime) {
+        this.deliveryTime = deliveryTime;
     }
 
     public String getProduct() {
@@ -49,8 +50,15 @@ public class Flower {
         this.id = id;
     }
 
-    public Flower(String name, int id) {
+    public Grocery(String name, int id) {
         this.name = name;
         this.id = id;
     }
+
+    public Grocery(String Store, String deliveryTime, String product) {
+        this.Store = Store;
+        this.deliveryTime = deliveryTime;
+        this.product= product;
+    }
+
 }

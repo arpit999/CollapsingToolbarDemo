@@ -1,6 +1,5 @@
 package com.example.vrs.collapsingtoolbardemo;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,20 +35,21 @@ public class Item_Selected extends AppCompatActivity {
             }
         });
 
-        ImageView imageView = (ImageView) findViewById(R.id.Image);
-        TextView textView = (TextView) findViewById(R.id.textView);
+        TextView store_name = (TextView) findViewById(R.id.store_name);
+        TextView delivery_time = (TextView) findViewById(R.id.delivery_time);
+        TextView product_name = (TextView) findViewById(R.id.product_name);
+
 
         Bundle extras = getIntent().getExtras();
         int position = extras.getInt("position");
 
-        Flower fl = MainActivity.flowers.get(position);
+        Grocery fl = MainActivity.groceries.get(position);
 
-        String name = fl.getName();
-        int image = fl.getId();
-        imageView.setImageResource(image);
-        textView.setText(name);
+        store_name.setText("Grocery Mart - "+fl.getStore());
+        delivery_time.setText("Deliver in "+fl.getDeliveryTime());
+        product_name.setText("Product : "+fl.getProduct());
 
-        Log.d("", "onCreate: Flower "+position);
+        Log.d("", "onCreate: Grocery "+position);
 //        imageView.setBackgroundResource();
     }
 }

@@ -2,7 +2,6 @@ package com.example.vrs.collapsingtoolbardemo;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,9 +15,9 @@ import java.util.List;
 public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
 
     private Context mContext;
-    List<Flower> list = new ArrayList<>();
+    List<Grocery> list = new ArrayList<>();
 
-    public CardAdapter(Context mContext, List<Flower> list) {
+    public CardAdapter(Context mContext, List<Grocery> list) {
         this.mContext = mContext;
         this.list = list;
     }
@@ -33,9 +32,10 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.Flower = getItem(position);
-        holder.cardtitle.setText(list.get(position).name);
-        holder.cardimage.setImageResource(list.get(position).id);
+        holder.Grocery = getItem(position);
+        holder.storeName.setText("Grocery Mart - "+list.get(position).Store);
+        holder.deliveryTime.setText("Deliver in "+list.get(position).deliveryTime);
+        holder.product.setText("Product : "+list.get(position).product);
     }
 
     @Override
@@ -48,22 +48,24 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder> {
         return list.size();
     }
 
-    public Flower getItem(int i) {
+    public Grocery getItem(int i) {
         return list.get(i);
     }
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        ImageView cardimage;
-        TextView cardtitle;
-        Flower Flower;
+        TextView storeName;
+        TextView deliveryTime;
+        TextView product;
+        Grocery Grocery;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            cardimage = (ImageView) itemView.findViewById(R.id.cardimage);
-            cardtitle = (TextView) itemView.findViewById(R.id.cardtitle);
+            storeName = (TextView) itemView.findViewById(R.id.store_name);
+            deliveryTime = (TextView) itemView.findViewById(R.id.delivery_time);
+            product = (TextView) itemView.findViewById(R.id.product_name);
         }
     }
 
